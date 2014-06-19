@@ -125,7 +125,7 @@ def getandplot(size,numtrials):
 
 
 def singleton_maze():
-	p=.4;
+	p=.2;
 	size=20;
 	[maze,start,end]=init_maze(p,size)
 		
@@ -138,7 +138,7 @@ def main():
 	#getandplot(20,200)
 	#print "20"
 	#getandplot(30,200)
-	numtrials=20;
+	numtrials=40;
 	getandplot(60,numtrials)
 	#getandplot(70,150)
 	#print "30"
@@ -153,5 +153,5 @@ def main():
 
 #if __name__ == '__main__':
 #	main()
-main()
-#singleton_maze()
+#main()
+singleton_maze()

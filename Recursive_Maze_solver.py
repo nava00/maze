@@ -66,24 +66,27 @@ def step_solve(maze,loc,path):
 	
 	# try down
 	if(maze[x+1][y].available()):
-		return step_solve(maze,[x+1,y],path)
+		if step_solve(maze,[x+1,y],path):
+			return True	
 	# try up
 	if(maze[x-1][y].available()):
-		return step_solve(maze,[x-1,y],path)
+		if step_solve(maze,[x-1,y],path):
+			return True	
 	#try right
 	if(maze[x][y+1].available()):
-		return step_solve(maze,[x,y+1], path)
+		if step_solve(maze,[x,y+1], path):
+			return True	
 	# try left
 	if(maze[x][y-1].available()):
-		return step_solve(maze,[x,y-1],path)
-	
+		if step_solve(maze,[x,y-1],path):
+			return True	
 	#all four possibilities have been exhausted, this node is a dud
 	maze[x][y].is_dud=True;
 	maze[x][y].on_path=False;
 	 #remove current element
 	path.pop(); #remove previous element
-
-	return step_solve(maze,path[len(path)-1],path)
+	return False
+	#return step_solve(maze,path[len(path)-1],path)
 
 def maze_data(maze_size,numtrials,p):
 	num_solved=0
@@ -115,8 +118,8 @@ def getandplot(size,numtrials):
 
 
 def singleton_maze():
-	p=.3;
-	size=20;
+	p=.2;
+	size=80;
 	[maze,start,end]=init_maze(p,size)
 	path=[[0,start]];
 

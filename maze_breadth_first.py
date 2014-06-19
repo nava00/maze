@@ -133,17 +133,14 @@ def singleton_maze():
 	print_maze(maze)
 
 def main():
-	#getandplot(10,200)
-	#print "10"
-	#getandplot(20,200)
-	#print "20"
-	#getandplot(30,200)
-	numtrials=20;
+
+	numtrials=200;
+	getandplot(30,numtrials)
 	getandplot(60,numtrials)
-	#getandplot(70,150)
-	#print "30"
-	
-	plt.xlabel('probability of wall')
+	getandplot(80,numtrials)
+
+	plt.ylim([-.1,1.1])
+	plt.xlabel('wall density')
 	plt.ylabel('proportion of mazes that are solvable')
 	plt.title('Numter of trials per point is '+str(numtrials))
 	plt.legend()

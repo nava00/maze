@@ -114,22 +114,22 @@ def getandplot(size,numtrials):
 
 def singleton_perc():
 	p=.3;
-	size=60
+	size=100
 	perc=init_perc(p,size)
 	print solve_perc(perc)
-	print_perc(perc)
+	#print_perc(perc)
 
 def main():
 	numtrials=100;
 	getandplot(20,numtrials)
-	getandplot(50,numtrials)
-	getandplot(100,numtrials/2)
-	getandplot(200,numtrials/5)
+#	getandplot(50,numtrials)
+#	getandplot(100,numtrials)
+
 	
 	plt.ylim([-.1,1.1])
 	plt.xlabel('wall density')
 	plt.ylabel('proportion of percs that are solvable')
-	plt.title('Percolator: Number of trials per point is '+str(numtrials))
+	plt.title('3d Percolator: Number of trials per point is '+str(numtrials))
 	plt.legend()
 	plt.show()
 	
@@ -137,5 +137,5 @@ def main():
 
 #if __name__ == '__main__':
 #	main()
-main()
-#singleton_perc()
+#main()
+singleton_perc()
